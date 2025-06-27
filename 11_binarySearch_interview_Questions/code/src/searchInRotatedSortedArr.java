@@ -60,4 +60,52 @@ public class searchInRotatedSortedArr {
         return -1; // array is not sorted
 
     }
+
+    //if array contains duplicates
+    static int pivotWithDuplicates(int[] arr){
+        int start = 0;
+        int end = arr.length-1;
+
+        while(start<=end){
+            int mid = start+(end-start)/2;
+
+            // 4 cases over here :
+            //case 1
+            if( mid<end && arr[mid] > arr[mid+1]){
+                return mid;
+            }
+
+            //case 2
+            if( mid>start && arr[mid]<arr[mid-1]){
+                return mid-1;
+            }
+            // case 3
+
+        //arr[start] = arr[end] = arr[mid]
+            if(arr[start]==arr[mid] && arr[end]==arr[mid]){
+                //skip the duplicates
+                //NOTE: what if these element at start and end were the pivot
+                //check if start is pivot
+                if(start < end && arr[start]>arr[start+1]){
+                    return start;
+                }
+                start++;
+                //check whether end is pivot
+                if(end > start && arr[end]<arr[end-1]){
+                    return end-1;
+                }
+                  end--;
+            } 
+            //left side is sorted, so pivot should be in right side...
+            else if(arr[start]<arr[mid] || (arr[start]==arr[mid] && arr[mid]>arr[end])){
+                start = mid+1;
+            }
+            //case 4
+            else{
+              end =mid-1;
+            }
+        }
+        return -1; // array is not sorted
+
+    }
 }
