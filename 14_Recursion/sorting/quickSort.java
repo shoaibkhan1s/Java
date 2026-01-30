@@ -6,7 +6,6 @@ public static void main(String[] args) {
     sort(arr, 0,arr.length-1);
     System.out.println(Arrays.toString(arr));
     Arrays.sort(arr);
-    Math.pow(0, 0)
 }
 
 static void sort(int[] arr,int low, int high){
