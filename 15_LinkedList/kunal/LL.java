@@ -1,6 +1,5 @@
 package kunal;
 
-import java.nio.channels.Pipe.SourceChannel;
 
 public class LL {
 
@@ -99,6 +98,25 @@ System.out.println(head.value);
         temp.next = temp.next.next;
         size--;
     }
+  public Node find(int value) {
+        Node node = head;
+        while (node != null) {
+            if (node.value == value) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+
+
+    public Node get(int idx){
+        Node temp = head;
+        for (int i = 0; i < idx; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
 
     public void display(){
         Node temp = head;
@@ -130,8 +148,11 @@ list.insert(15, 1);
 list.insertLast(50);
 // list.deleteFirst();
 // list.deleteLast();
-list.delete(1);
+// list.delete(1);
 list.display();
+
+System.out.println(list.find(15).value);
+System.out.println(list.get(1).value);
 
 }
 }
