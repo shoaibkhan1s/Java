@@ -1,4 +1,4 @@
-package kunal;
+package Shoaib;
 
 public class DLL {
     private Node head;

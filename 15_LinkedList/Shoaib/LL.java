@@ -1,4 +1,4 @@
-package kunal;
+package Shoaib;
 
 
 public class LL {
@@ -25,6 +25,7 @@ System.out.println(head.value);
     public void insertLast(int val){
        if (tail==null) {
         insertFirst(val);
+        return;
        }
        Node node = new Node(val);
        tail.next = node;
@@ -35,13 +36,11 @@ System.out.println(head.value);
     public void insert(int val, int index){
         if(index==0){
             insertFirst(val);
-            size++;
             return;
 
         }
         if (index==size) {
             insertLast(val);
-            size++;
             return;
         }
         Node temp = head;
@@ -151,8 +150,13 @@ list.insertLast(50);
 // list.delete(1);
 list.display();
 
-System.out.println(list.find(15).value);
-System.out.println(list.get(1).value);
+        Node node = list.find(15);
+        if (node != null) {
+            System.out.println(node.value);
+        } else {
+            System.out.println("Node not found");
+        }
+        System.out.println(list.get(1).value);
 
 }
 }
