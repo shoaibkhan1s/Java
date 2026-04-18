@@ -53,6 +53,22 @@ System.out.println(head.value);
         size++;        
     }
 
+    //insert using recursion
+    public void insertRec(int val,int index){
+        head = insertRec(val, index, head);
+    }
+
+    private Node insertRec(int val,int index,Node node){
+        if (index==0) {
+            Node temp = new Node(val,node);
+            size++;
+            return temp;
+        }
+
+       node.next =  insertRec(val, index--, node.next);
+       return node;
+    }
+
     public void deleteFirst(){
         if (head.next == null) {
             head = null;
@@ -148,6 +164,7 @@ list.insertLast(50);
 // list.deleteFirst();
 // list.deleteLast();
 // list.delete(1);
+list.insertRec(88, 2);
 list.display();
 
         Node node = list.find(15);
