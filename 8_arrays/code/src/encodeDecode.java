@@ -13,6 +13,8 @@ public class encodeDecode {
         System.out.println(list);
     }
 
+    
+
      public static String encode(List<String> strs) {
         
             StringBuilder sb = new StringBuilder();

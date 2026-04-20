@@ -1,4 +1,3 @@
-package Shoaib;
 
 public class CLL {
     private Node head;
@@ -78,3 +77,4 @@ public class CLL {
         list.display();
     }
 }
+

@@ -1,10 +1,7 @@
-package Shoaib;
-
-
 public class LL {
 
-    private Node head; 
-    private Node tail; 
+    public Node head; 
+    public Node tail; 
     private int size;
 
     LL(){
@@ -19,7 +16,6 @@ public class LL {
             tail = head;
         }
         size++;
-System.out.println(head.value);
     }
 
     public void insertLast(int val){
@@ -30,7 +26,6 @@ System.out.println(head.value);
        Node node = new Node(val);
        tail.next = node;
        tail = node;
-       System.out.println(tail.value);
        size++;
     }
     public void insert(int val, int index){
@@ -141,6 +136,24 @@ System.out.println(head.value);
         }
         System.out.println("END");
     }
+
+public void removeDuplicate(){
+    Node node = head;
+    while (node.next!=null) {
+        if (node.value == node.next.value) {
+            node.next = node.next.next;
+            size--;
+        }else{
+            node= node.next;
+        }
+    }
+    tail = node;
+    tail.next =null;
+}
+
+
+
+
         public class Node{
             private int value;
             private Node next;
@@ -158,13 +171,21 @@ System.out.println(head.value);
 
         public static void main(String[] args) {
 LL list = new LL();
-list.insertFirst(10);
-list.insert(15, 1);
-list.insertLast(50);
-// list.deleteFirst();
-// list.deleteLast();
-// list.delete(1);
-list.insertRec(88, 2);
+// list.insertFirst(10);
+// list.insert(15, 1);
+// list.insertLast(50);
+// // list.deleteFirst();
+// // list.deleteLast();
+// // list.delete(1);
+// list.insertRec(88, 2);
+
+list.insertFirst(1);
+list.insertFirst(1);
+list.insertFirst(2);
+list.insertFirst(2);
+list.insertFirst(3);
+list.insertFirst(3);
+list.removeDuplicate();
 list.display();
 
         Node node = list.find(15);
@@ -177,4 +198,5 @@ list.display();
 
 }
 }
+
 

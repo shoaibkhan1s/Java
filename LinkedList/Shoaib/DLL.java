@@ -1,4 +1,3 @@
-package Shoaib;
 
 public class DLL {
     private Node head;
@@ -166,3 +165,4 @@ public class DLL {
     }
 
 }
+
