@@ -11,13 +11,14 @@ public class CustomStack {
         this.data = new int[size];
     }
 
-    public void push(int elem) throws StackException {
+    public boolean push(int elem)  {
         if (isFull()) {
-            throw new StackException("Stack Overflow");
+           System.out.println("stack is full");
+            return false;
         }
         ptr++;
         data[ptr] = elem;
-
+        return true;
     }
 
     public int pop() throws StackException {
@@ -45,14 +46,28 @@ public class CustomStack {
     }
 
     public static void main(String[] args) throws StackException {
-        CustomStack stack = new CustomStack(3);
+        // CustomStack stack = new CustomStack(3);
+        // stack.push(10);
+        // stack.push(20);
+        // stack.push(30);
+        // System.out.println(stack.peek());
+        // System.out.println(stack.pop());
+        // System.out.println(stack.pop());
+        // System.out.println(stack.pop());
+
+     
+             CustomStack stack = new dynamicCustomStack(3);
         stack.push(10);
         stack.push(20);
         stack.push(30);
+        stack.push(40);
+        stack.push(50);
+
         System.out.println(stack.peek());
         System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());
-
+        System.out.println(stack.pop());
+    
     }
 }

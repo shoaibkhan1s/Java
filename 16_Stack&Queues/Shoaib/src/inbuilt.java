@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class inbuilt {
@@ -11,5 +13,11 @@ public class inbuilt {
         System.out.println(stack.peek());
         System.out.println(stack.pop());
         System.out.println(stack);
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(5);
+        queue.add(51);
+        queue.add(20);
+        System.out.println(queue.remove());
     }
 }
