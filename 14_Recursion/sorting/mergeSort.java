@@ -52,9 +52,6 @@ public class mergeSort {
         return mix;
     }
 
-
-
-
     static void mergeSortInPlace(int[] arr,int s,int e){
         if ((e-s)==1) {
             return ;
