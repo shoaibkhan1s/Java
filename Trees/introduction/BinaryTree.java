@@ -11,6 +11,8 @@ public class BinaryTree {
     Node left;
     Node right;
 
+
+    
     public Node(int value) {
       this.value = value;
     }
